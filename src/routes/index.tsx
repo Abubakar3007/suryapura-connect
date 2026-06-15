@@ -86,7 +86,7 @@ function Index() {
             <button className="font-hi text-sm px-4 py-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition shadow-lg shadow-primary/20 cursor-pointer">सेवा शुरू करें</button>
           </div>
           <button onClick={() => setMenuOpen(v => !v)} className="lg:hidden shrink-0 h-10 w-10 grid place-items-center rounded-full border border-border bg-card" aria-label="menu">
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5 cursor-pointer">
               <span className={`h-0.5 w-5 bg-foreground transition ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
               <span className={`h-0.5 w-5 bg-foreground transition ${menuOpen ? "opacity-0" : ""}`} />
               <span className={`h-0.5 w-5 bg-foreground transition ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
@@ -119,10 +119,10 @@ function Index() {
               शिक्षा, कृषि, सड़क और डिजिटल पहचान से आत्मनिर्भर <strong className="text-foreground font-semibold">सूर्यपुरा</strong> — हर ग्रामवासी की प्रगति, एक ही पोर्टल पर।
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className="font-hi px-6 py-3.5 rounded-full bg-primary text-primary-foreground text-base font-medium shadow-xl shadow-primary/25 hover:translate-y-[-2px] transition">
+              <button className="font-hi px-6 py-3.5 rounded-full bg-primary text-primary-foreground text-base font-medium shadow-xl shadow-primary/25 hover:translate-y-[-2px] transition cursor-pointer">
                 योजना देखें →
               </button>
-              <button className="font-hi px-6 py-3.5 rounded-full bg-card border border-border text-base font-medium hover:bg-secondary transition">
+              <button className="font-hi px-6 py-3.5 rounded-full bg-card border border-border text-base font-medium hover:bg-secondary transition cursor-pointer">
                 गांव की प्रगति
               </button>
             </div>
@@ -229,7 +229,7 @@ function Index() {
           <div className="mt-10 grid md:grid-cols-3 gap-6">
             {[
               {
-                img: farmer, name: "सुनीता देवी", role: "किसान · आयु 42",
+                img: farmer, name: "सुरेश कुमार", role: "किसान · आयु 42",
                 before: "1.5 एकड़ बंजर ज़मीन, सालाना आय ₹18,000",
                 after: "ड्रिप सिंचाई से सब्ज़ी उगाकर अब ₹1.2 लाख सालाना",
                 quote: "अब बच्चों की पढ़ाई की चिंता नहीं रही।"
@@ -311,7 +311,7 @@ function Index() {
                   <div className="font-display text-2xl font-bold text-primary">{y.b}</div>
                   <div className="font-hi text-[11px] text-muted-foreground">लाभार्थी</div>
                 </div>
-                <button className={`font-hi text-xs px-4 py-2 rounded-full ${y.status === "Active" ? "bg-primary text-primary-foreground" : "border border-border bg-card hover:bg-secondary"}`}>
+                <button className={`font-hi text-xs px-4 py-2 cursor-pointer rounded-full ${y.status === "Active" ? "bg-primary text-primary-foreground" : "border border-border bg-card hover:bg-secondary"}`}>
                   {y.action} →
                 </button>
               </div>
@@ -389,8 +389,8 @@ function Index() {
               <textarea rows={4} className="font-hi rounded-xl border border-input bg-background p-4 outline-none focus:border-primary resize-none" placeholder="अपनी समस्या सरल शब्दों में लिखें..." />
             </div>
             <div className="flex flex-wrap gap-3 pt-1">
-              <button className="font-hi px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium shadow-lg shadow-primary/20">शिकायत दर्ज करें</button>
-              <button type="button" className="font-hi px-6 py-3 rounded-full border border-border bg-card hover:bg-secondary inline-flex items-center gap-2">
+              <button className="font-hi px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium shadow-lg shadow-primary/20 cursor-pointer">शिकायत दर्ज करें</button>
+              <button type="button" className="font-hi px-6 py-3 rounded-full border border-border bg-card hover:bg-secondary inline-flex items-center gap-2 cursor-pointer">
                 🔍 शिकायत ट्रैक करें
               </button>
             </div>
@@ -445,10 +445,10 @@ function Index() {
                 युवा, छात्र, शिक्षक और NGO — सूर्यपुरा को आत्मनिर्भर बनाने में आपका योगदान अमूल्य है। शिक्षा दीजिए, हुनर सिखाइए, या सिर्फ साथ खड़े रहिए।
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <button className="font-hi px-7 py-3.5 rounded-full bg-accent text-accent-foreground font-semibold shadow-xl hover:translate-y-[-2px] transition">
+                <button className="font-hi px-7 py-3.5 rounded-full bg-accent text-accent-foreground font-semibold shadow-xl hover:translate-y-[-2px] transition cursor-pointer">
                   Join Now · अभी जुड़ें →
                 </button>
-                <button className="font-hi px-6 py-3.5 rounded-full bg-white/10 border border-white/20 backdrop-blur hover:bg-white/15 transition">
+                <button className="font-hi px-6 py-3.5 rounded-full bg-white/10 border border-white/20 backdrop-blur hover:bg-white/15 transition cursor-pointer">
                   NGO पंजीकरण
                 </button>
               </div>
