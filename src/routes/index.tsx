@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroLeader from "@/assets/hero-leader.jpg";
 import education from "@/assets/education.jpg";
@@ -6,19 +5,6 @@ import farmer from "@/assets/farmer.jpg";
 import road from "@/assets/road.jpg";
 import panchayat from "@/assets/panchayat.jpg";
 import digitalId from "@/assets/digital-id.jpg";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "सूर्यपुरा ग्राम विकास पोर्टल — बदलता गांव, बढ़ता भारत" },
-      { name: "description", content: "शिक्षा, कृषि, सड़क और डिजिटल पहचान से आत्मनिर्भर सूर्यपुरा। एक आधुनिक भारतीय गांव का डिजिटल पोर्टल।" },
-      { property: "og:title", content: "सूर्यपुरा ग्राम विकास पोर्टल" },
-      { property: "og:description", content: "बदलता गांव, बढ़ता भारत — आत्मनिर्भर सूर्यपुरा" },
-      { property: "og:image", content: heroLeader },
-    ],
-  }),
-  component: Index,
-});
 
 const navItems = [
   { hi: "मुख्य पृष्ठ", href: "#top" },
@@ -64,7 +50,7 @@ const services = [
   },
 ];
 
-function Index() {
+export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div id="top" className="min-h-screen">
