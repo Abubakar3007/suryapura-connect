@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
 
@@ -41,16 +41,20 @@
   --foreground: oklch(0.22 0.04 145);
   --card: oklch(0.995 0.008 90);
   --card-foreground: oklch(0.22 0.04 145);
-  --primary: oklch(0.42 0.11 150);        /* deep forest green */
+  --primary: oklch(0.42 0.11 150);
+  /* deep forest green */
   --primary-foreground: oklch(0.985 0.012 95);
-  --secondary: oklch(0.93 0.04 90);       /* warm cream */
+  --secondary: oklch(0.93 0.04 90);
+  /* warm cream */
   --secondary-foreground: oklch(0.28 0.05 145);
   --muted: oklch(0.94 0.02 95);
   --muted-foreground: oklch(0.46 0.04 130);
-  --accent: oklch(0.68 0.16 55);          /* saffron / terracotta */
+  --accent: oklch(0.68 0.16 55);
+  /* saffron / terracotta */
   --accent-foreground: oklch(0.99 0.01 90);
   --saffron: oklch(0.72 0.18 60);
-  --earth: oklch(0.45 0.08 50);           /* warm brown */
+  --earth: oklch(0.45 0.08 50);
+  /* warm brown */
   --cream: oklch(0.965 0.025 85);
   --border: oklch(0.86 0.03 95);
   --input: oklch(0.86 0.03 95);
@@ -62,7 +66,10 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -71,6 +78,15 @@
       radial-gradient(circle at 15% 10%, oklch(0.93 0.05 90 / 0.6), transparent 40%),
       radial-gradient(circle at 90% 80%, oklch(0.88 0.06 145 / 0.4), transparent 50%);
   }
-  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
-  .font-hi { font-family: var(--font-hindi); }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .font-hi {
+    font-family: var(--font-hindi);
+  }
 }
