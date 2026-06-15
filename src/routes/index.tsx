@@ -37,21 +37,31 @@ const stats = [
 ];
 
 const services = [
-  { id: "krishi", title: "कृषि विकास", en: "Smart Farming", img: farmer, color: "from-emerald-700/85 to-emerald-900/40",
+  {
+    id: "krishi", title: "कृषि विकास", en: "Smart Farming", img: farmer, color: "from-emerald-700/85 to-emerald-900/40",
     desc: "स्मार्ट सिंचाई, मिट्टी जांच, मौसम चेतावनी और PM-KISAN, फसल बीमा जैसी योजनाओं की सीधी जानकारी।",
-    chips: ["ड्रिप सिंचाई", "मृदा रिपोर्ट", "MSP अलर्ट"] },
-  { id: "shiksha", title: "शिक्षा", en: "Digital Learning", img: education, color: "from-amber-700/85 to-orange-900/40",
+    chips: ["ड्रिप सिंचाई", "मृदा रिपोर्ट", "MSP अलर्ट"]
+  },
+  {
+    id: "shiksha", title: "शिक्षा", en: "Digital Learning", img: education, color: "from-amber-700/85 to-orange-900/40",
     desc: "डिजिटल कक्षाएं, स्मार्ट क्लासरूम, छात्रवृत्ति आवेदन और बेटी पढ़ाओ अभियान — एक ही जगह।",
-    chips: ["स्मार्ट क्लास", "छात्रवृत्ति", "बेटी पढ़ाओ"] },
-  { id: "infra", title: "सड़क एवं इंफ्रास्ट्रक्चर", en: "Roads & Infra", img: road, color: "from-stone-700/85 to-stone-900/40",
+    chips: ["स्मार्ट क्लास", "छात्रवृत्ति", "बेटी पढ़ाओ"]
+  },
+  {
+    id: "infra", title: "सड़क एवं इंफ्रास्ट्रक्चर", en: "Roads & Infra", img: road, color: "from-stone-700/85 to-stone-900/40",
     desc: "ग्रामीण सड़कें, सौर स्ट्रीट लाइट, स्वच्छ जल और शिकायत निवारण — पारदर्शी प्रगति।",
-    chips: ["PMGSY", "सौर लाइट", "जल जीवन"] },
-  { id: "panchayat", title: "पंचायत सेवाएं", en: "Panchayat Services", img: panchayat, color: "from-green-800/85 to-green-950/40",
+    chips: ["PMGSY", "सौर लाइट", "जल जीवन"]
+  },
+  {
+    id: "panchayat", title: "पंचायत सेवाएं", en: "Panchayat Services", img: panchayat, color: "from-green-800/85 to-green-950/40",
     desc: "जन्म, मृत्यु, आय व निवास प्रमाण पत्र, ग्राम सभा का ऑनलाइन एजेंडा और शिकायत दर्ज करें।",
-    chips: ["प्रमाण पत्र", "शिकायत", "ग्राम सभा"] },
-  { id: "digital", title: "डिजिटल पहचान", en: "Digital Identity", img: digitalId, color: "from-orange-700/85 to-rose-900/40",
+    chips: ["प्रमाण पत्र", "शिकायत", "ग्राम सभा"]
+  },
+  {
+    id: "digital", title: "डिजिटल पहचान", en: "Digital Identity", img: digitalId, color: "from-orange-700/85 to-rose-900/40",
     desc: "आधार, राशन कार्ड, आयुष्मान भारत और DigiLocker से जुड़ी सभी सेवाएं — सुरक्षित व आसान।",
-    chips: ["आधार", "आयुष्मान", "DigiLocker"] },
+    chips: ["आधार", "आयुष्मान", "DigiLocker"]
+  },
 ];
 
 function Index() {
@@ -72,8 +82,8 @@ function Index() {
             {navItems.map(n => <a key={n.href} href={n.href} className="hover:text-primary transition">{n.hi}</a>)}
           </nav>
           <div className="hidden lg:flex items-center gap-3">
-            <button className="font-hi text-sm px-4 py-2 rounded-full border border-border hover:bg-secondary transition">लॉगिन</button>
-            <button className="font-hi text-sm px-4 py-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition shadow-lg shadow-primary/20">सेवा शुरू करें</button>
+            <button className="font-hi text-sm px-4 py-2 rounded-full border border-border hover:bg-secondary transition cursor-pointer">लॉगिन</button>
+            <button className="font-hi text-sm px-4 py-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition shadow-lg shadow-primary/20 cursor-pointer">सेवा शुरू करें</button>
           </div>
           <button onClick={() => setMenuOpen(v => !v)} className="lg:hidden shrink-0 h-10 w-10 grid place-items-center rounded-full border border-border bg-card" aria-label="menu">
             <div className="flex flex-col gap-1.5">
@@ -218,18 +228,24 @@ function Index() {
           </div>
           <div className="mt-10 grid md:grid-cols-3 gap-6">
             {[
-              { img: farmer, name: "सुनीता देवी", role: "किसान · आयु 42",
+              {
+                img: farmer, name: "सुनीता देवी", role: "किसान · आयु 42",
                 before: "1.5 एकड़ बंजर ज़मीन, सालाना आय ₹18,000",
                 after: "ड्रिप सिंचाई से सब्ज़ी उगाकर अब ₹1.2 लाख सालाना",
-                quote: "अब बच्चों की पढ़ाई की चिंता नहीं रही।" },
-              { img: education, name: "आरती कुमारी", role: "छात्रा · कक्षा 10",
+                quote: "अब बच्चों की पढ़ाई की चिंता नहीं रही।"
+              },
+              {
+                img: education, name: "आरती कुमारी", role: "छात्रा · कक्षा 10",
                 before: "गांव में स्कूल नहीं, 7 km पैदल जाना पड़ता था",
                 after: "स्मार्ट क्लास और छात्रवृत्ति से अब NEET की तैयारी",
-                quote: "मुझे डॉक्टर बनकर गांव लौटना है।" },
-              { img: panchayat, name: "रामलाल परिवार", role: "लाभार्थी · PM आवास",
+                quote: "मुझे डॉक्टर बनकर गांव लौटना है।"
+              },
+              {
+                img: panchayat, name: "रामलाल परिवार", role: "लाभार्थी · PM आवास",
                 before: "कच्चा घर, बारिश में टपकती छत",
                 after: "पक्का घर, सोलर लाइट और शौचालय — सम्मान के साथ जीवन",
-                quote: "सरकार ने हमारे सपने को घर दिया।" },
+                quote: "सरकार ने हमारे सपने को घर दिया।"
+              },
             ].map(s => (
               <article key={s.name} className="group rounded-3xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-xl hover:shadow-primary/10 transition">
                 <div className="relative aspect-[4/3] overflow-hidden">
