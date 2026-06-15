@@ -208,6 +208,258 @@ function Index() {
         </div>
       </section>
 
+      {/* SUCCESS STORIES */}
+      <section id="kahaniyan" className="bg-gradient-to-b from-background via-secondary/30 to-background border-y border-border">
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <div className="max-w-2xl">
+            <div className="font-hi text-sm text-accent uppercase tracking-widest">बदलाव की कहानियां</div>
+            <h2 className="font-hi text-4xl sm:text-5xl font-semibold mt-2">सूर्यपुरा के असली नायक</h2>
+            <p className="font-hi text-muted-foreground mt-3 text-lg">हर कहानी, एक नया सवेरा। हर चेहरा, एक नई उम्मीद।</p>
+          </div>
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {[
+              { img: farmer, name: "सुनीता देवी", role: "किसान · आयु 42",
+                before: "1.5 एकड़ बंजर ज़मीन, सालाना आय ₹18,000",
+                after: "ड्रिप सिंचाई से सब्ज़ी उगाकर अब ₹1.2 लाख सालाना",
+                quote: "अब बच्चों की पढ़ाई की चिंता नहीं रही।" },
+              { img: education, name: "आरती कुमारी", role: "छात्रा · कक्षा 10",
+                before: "गांव में स्कूल नहीं, 7 km पैदल जाना पड़ता था",
+                after: "स्मार्ट क्लास और छात्रवृत्ति से अब NEET की तैयारी",
+                quote: "मुझे डॉक्टर बनकर गांव लौटना है।" },
+              { img: panchayat, name: "रामलाल परिवार", role: "लाभार्थी · PM आवास",
+                before: "कच्चा घर, बारिश में टपकती छत",
+                after: "पक्का घर, सोलर लाइट और शौचालय — सम्मान के साथ जीवन",
+                quote: "सरकार ने हमारे सपने को घर दिया।" },
+            ].map(s => (
+              <article key={s.name} className="group rounded-3xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-xl hover:shadow-primary/10 transition">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img src={s.img} alt={s.name} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4">
+                    <div className="font-hi text-white text-lg font-semibold">{s.name}</div>
+                    <div className="text-white/80 text-xs">{s.role}</div>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-xl bg-stone-100 dark:bg-stone-900/40 p-3">
+                      <div className="font-hi text-[11px] uppercase tracking-wider text-muted-foreground">पहले</div>
+                      <div className="font-hi text-[13px] mt-1 leading-snug">{s.before}</div>
+                    </div>
+                    <div className="rounded-xl bg-primary/10 p-3 border border-primary/20">
+                      <div className="font-hi text-[11px] uppercase tracking-wider text-primary">अब</div>
+                      <div className="font-hi text-[13px] mt-1 leading-snug">{s.after}</div>
+                    </div>
+                  </div>
+                  <p className="font-hi mt-4 text-[15px] text-foreground/90 italic border-l-2 border-accent pl-3">"{s.quote}"</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GOVERNMENT SCHEMES TRACKER */}
+      <section id="yojana" className="mx-auto max-w-7xl px-5 py-20">
+        <div className="flex items-end justify-between flex-wrap gap-4">
+          <div className="max-w-2xl">
+            <div className="font-hi text-sm text-accent uppercase tracking-widest">सरकारी योजनाएं</div>
+            <h2 className="font-hi text-4xl sm:text-5xl font-semibold mt-2">हर योजना, हर लाभार्थी तक</h2>
+            <p className="font-hi text-muted-foreground mt-3 text-lg">अपने गांव में चल रही सक्रिय योजनाओं की पारदर्शी जानकारी।</p>
+          </div>
+          <div className="flex gap-2 font-hi text-xs">
+            <span className="px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20">● 18 सक्रिय</span>
+            <span className="px-3 py-1.5 rounded-full bg-secondary border border-border">✓ 7 पूर्ण</span>
+          </div>
+        </div>
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { icon: "🌾", name: "PM-KISAN सम्मान निधि", dept: "कृषि मंत्रालय", status: "Active", b: "2,184", action: "Apply Now" },
+            { icon: "🏠", name: "PM आवास योजना (ग्रामीण)", dept: "ग्रामीण विकास", status: "Active", b: "342", action: "Apply Now" },
+            { icon: "💧", name: "जल जीवन मिशन", dept: "जल शक्ति", status: "Completed", b: "1,840 घर", action: "View Details" },
+            { icon: "🎓", name: "बेटी पढ़ाओ छात्रवृत्ति", dept: "शिक्षा विभाग", status: "Active", b: "612", action: "Apply Now" },
+            { icon: "🏥", name: "आयुष्मान भारत", dept: "स्वास्थ्य मंत्रालय", status: "Active", b: "9,420", action: "View Details" },
+            { icon: "🛣️", name: "PMGSY सड़क योजना", dept: "ग्रामीण सड़क", status: "Completed", b: "42 km", action: "View Details" },
+          ].map(y => (
+            <article key={y.name} className="rounded-2xl bg-card border border-border p-5 hover:border-primary/40 hover:shadow-lg transition">
+              <div className="flex items-start justify-between gap-3">
+                <div className="h-12 w-12 shrink-0 rounded-xl bg-primary/10 grid place-items-center text-2xl">{y.icon}</div>
+                <span className={`font-hi text-[11px] px-2.5 py-1 rounded-full ${y.status === "Active" ? "bg-emerald-100 text-emerald-800 border border-emerald-200" : "bg-stone-100 text-stone-700 border border-stone-200"}`}>
+                  {y.status === "Active" ? "● सक्रिय" : "✓ पूर्ण"}
+                </span>
+              </div>
+              <h3 className="font-hi mt-4 text-lg font-semibold leading-snug">{y.name}</h3>
+              <div className="font-hi text-xs text-muted-foreground mt-1">{y.dept}</div>
+              <div className="mt-4 flex items-end justify-between gap-3">
+                <div>
+                  <div className="font-display text-2xl font-bold text-primary">{y.b}</div>
+                  <div className="font-hi text-[11px] text-muted-foreground">लाभार्थी</div>
+                </div>
+                <button className={`font-hi text-xs px-4 py-2 rounded-full ${y.status === "Active" ? "bg-primary text-primary-foreground" : "border border-border bg-card hover:bg-secondary"}`}>
+                  {y.action} →
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* VILLAGE DASHBOARD */}
+      <section id="dashboard" className="bg-primary text-primary-foreground">
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <div className="max-w-2xl">
+            <div className="font-hi text-sm uppercase tracking-widest text-accent">गांव का डेटा</div>
+            <h2 className="font-hi text-4xl sm:text-5xl font-semibold mt-2">सूर्यपुरा एक नज़र में</h2>
+            <p className="font-hi text-primary-foreground/80 mt-3 text-lg">पारदर्शी आंकड़े, पक्की प्रगति।</p>
+          </div>
+          <div className="mt-10 grid md:grid-cols-3 gap-5">
+            {[
+              { label: "साक्षरता दर", value: 87, suffix: "%", note: "+12% पिछले 5 वर्ष में", color: "bg-accent" },
+              { label: "सड़क विकास", value: 92, suffix: "%", note: "42 km में से 39 km पक्की", color: "bg-amber-300" },
+              { label: "किसान आय वृद्धि", value: 68, suffix: "%", note: "औसत आय ₹38k → ₹64k/वर्ष", color: "bg-emerald-300" },
+            ].map(d => (
+              <div key={d.label} className="rounded-3xl bg-white/10 backdrop-blur p-6 border border-white/15">
+                <div className="font-hi text-sm text-primary-foreground/80">{d.label}</div>
+                <div className="font-display text-5xl font-bold mt-2">{d.value}<span className="text-3xl">{d.suffix}</span></div>
+                <div className="mt-4 h-2.5 w-full rounded-full bg-white/15 overflow-hidden">
+                  <div className={`h-full ${d.color} rounded-full`} style={{ width: `${d.value}%` }} />
+                </div>
+                <div className="font-hi text-xs text-primary-foreground/70 mt-3">{d.note}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 grid sm:grid-cols-4 gap-4">
+            {[
+              { n: "1,840", l: "घरों में नल" },
+              { n: "612", l: "छात्राएं स्कूल में" },
+              { n: "24×7", l: "बिजली आपूर्ति" },
+              { n: "100%", l: "खुले शौच मुक्त" },
+            ].map(c => (
+              <div key={c.l} className="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <div className="font-display text-2xl font-bold text-accent">{c.n}</div>
+                <div className="font-hi text-xs text-primary-foreground/80 mt-1">{c.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMPLAINT / FEEDBACK + EVENTS */}
+      <section className="mx-auto max-w-7xl px-5 py-20 grid lg:grid-cols-2 gap-10">
+        {/* Complaint */}
+        <div id="shikayat">
+          <div className="font-hi text-sm text-accent uppercase tracking-widest">शिकायत / फीडबैक</div>
+          <h2 className="font-hi text-3xl sm:text-4xl font-semibold mt-2">अपनी आवाज़ पंचायत तक पहुंचाएं</h2>
+          <p className="font-hi text-muted-foreground mt-3">हर शिकायत का जवाब 7 कार्य दिवस में।</p>
+          <form className="mt-6 rounded-3xl border border-border bg-card p-6 grid gap-4 shadow-sm" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid gap-1.5">
+              <label className="font-hi text-sm text-foreground/80">पूरा नाम</label>
+              <input className="font-hi h-12 rounded-xl border border-input bg-background px-4 outline-none focus:border-primary" placeholder="जैसे — सुनीता देवी" />
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid gap-1.5">
+                <label className="font-hi text-sm text-foreground/80">मोबाइल नंबर</label>
+                <input className="font-hi h-12 rounded-xl border border-input bg-background px-4 outline-none focus:border-primary" placeholder="+91 ••••• •••••" />
+              </div>
+              <div className="grid gap-1.5">
+                <label className="font-hi text-sm text-foreground/80">श्रेणी</label>
+                <select className="font-hi h-12 rounded-xl border border-input bg-background px-4 outline-none focus:border-primary">
+                  <option>सड़क / पानी</option><option>बिजली</option><option>शिक्षा</option><option>स्वास्थ्य</option><option>अन्य</option>
+                </select>
+              </div>
+            </div>
+            <div className="grid gap-1.5">
+              <label className="font-hi text-sm text-foreground/80">समस्या विवरण</label>
+              <textarea rows={4} className="font-hi rounded-xl border border-input bg-background p-4 outline-none focus:border-primary resize-none" placeholder="अपनी समस्या सरल शब्दों में लिखें..." />
+            </div>
+            <div className="flex flex-wrap gap-3 pt-1">
+              <button className="font-hi px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium shadow-lg shadow-primary/20">शिकायत दर्ज करें</button>
+              <button type="button" className="font-hi px-6 py-3 rounded-full border border-border bg-card hover:bg-secondary inline-flex items-center gap-2">
+                🔍 शिकायत ट्रैक करें
+              </button>
+            </div>
+            <div className="font-hi text-xs text-muted-foreground">शिकायत संख्या SMS द्वारा आपके मोबाइल पर भेजी जाएगी।</div>
+          </form>
+        </div>
+
+        {/* Events */}
+        <div id="ghatnayen">
+          <div className="font-hi text-sm text-accent uppercase tracking-widest">घटनाएं और सूचना</div>
+          <h2 className="font-hi text-3xl sm:text-4xl font-semibold mt-2">आने वाली गतिविधियां</h2>
+          <p className="font-hi text-muted-foreground mt-3">पंचायत, स्वास्थ्य व प्रशिक्षण कार्यक्रमों की जानकारी।</p>
+          <ol className="mt-6 relative border-l-2 border-primary/30 ml-3 grid gap-5">
+            {[
+              { d: "18", m: "जून", time: "सुबह 10:00", title: "ग्राम सभा बैठक", place: "पंचायत भवन", tag: "पंचायत", color: "bg-primary text-primary-foreground" },
+              { d: "22", m: "जून", time: "सुबह 9:00 – दोपहर 4:00", title: "निःशुल्क स्वास्थ्य शिविर", place: "प्राथमिक स्वास्थ्य केंद्र", tag: "स्वास्थ्य", color: "bg-rose-600 text-white" },
+              { d: "28", m: "जून", time: "सुबह 11:00", title: "जैविक खेती प्रशिक्षण", place: "कृषि विज्ञान केंद्र", tag: "किसान", color: "bg-emerald-700 text-white" },
+              { d: "02", m: "जुलाई", time: "शाम 6:00", title: "डिजिटल साक्षरता शिविर", place: "ग्राम पाठशाला", tag: "शिक्षा", color: "bg-amber-600 text-white" },
+            ].map(e => (
+              <li key={e.title} className="ml-6 relative">
+                <span className={`absolute -left-[2.65rem] top-1 h-12 w-12 rounded-2xl grid place-items-center font-display ${e.color} shadow-md`}>
+                  <span className="leading-none text-center">
+                    <span className="block text-base font-bold">{e.d}</span>
+                    <span className="block text-[9px] font-hi -mt-0.5">{e.m}</span>
+                  </span>
+                </span>
+                <div className="rounded-2xl border border-border bg-card p-4 hover:shadow-md transition">
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 className="font-hi text-lg font-semibold">{e.title}</h3>
+                    <span className="font-hi text-[11px] px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">{e.tag}</span>
+                  </div>
+                  <div className="font-hi text-sm text-muted-foreground mt-1">🕐 {e.time} · 📍 {e.place}</div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* VOLUNTEER / JOIN */}
+      <section id="judein" className="mx-auto max-w-7xl px-5 pb-24">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-emerald-800 via-primary to-emerald-900 text-primary-foreground p-8 sm:p-14 shadow-2xl shadow-primary/20">
+          <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-accent/30 blur-3xl" />
+          <div className="absolute -bottom-24 -left-10 h-64 w-64 rounded-full bg-amber-400/20 blur-3xl" />
+          <div className="relative grid lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
+            <div>
+              <div className="font-hi text-sm text-accent uppercase tracking-widest">जुड़ें विकास मिशन से</div>
+              <h2 className="font-hi text-4xl sm:text-5xl font-semibold mt-2 leading-tight">
+                गांव बदल रहा है —<br />आप भी हिस्सा बनिए।
+              </h2>
+              <p className="font-hi mt-4 text-lg text-primary-foreground/85 max-w-xl">
+                युवा, छात्र, शिक्षक और NGO — सूर्यपुरा को आत्मनिर्भर बनाने में आपका योगदान अमूल्य है। शिक्षा दीजिए, हुनर सिखाइए, या सिर्फ साथ खड़े रहिए।
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <button className="font-hi px-7 py-3.5 rounded-full bg-accent text-accent-foreground font-semibold shadow-xl hover:translate-y-[-2px] transition">
+                  Join Now · अभी जुड़ें →
+                </button>
+                <button className="font-hi px-6 py-3.5 rounded-full bg-white/10 border border-white/20 backdrop-blur hover:bg-white/15 transition">
+                  NGO पंजीकरण
+                </button>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-6 font-hi text-sm">
+                <div><span className="font-display text-2xl font-bold text-accent">820+</span><div className="text-primary-foreground/70 text-xs">सक्रिय स्वयंसेवक</div></div>
+                <div><span className="font-display text-2xl font-bold text-accent">36</span><div className="text-primary-foreground/70 text-xs">सहयोगी NGO</div></div>
+                <div><span className="font-display text-2xl font-bold text-accent">14</span><div className="text-primary-foreground/70 text-xs">गांव जुड़े</div></div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { icon: "📚", t: "शिक्षा दान", d: "बच्चों को पढ़ाएं" },
+                { icon: "🌱", t: "हरित मिशन", d: "पेड़ लगाएं" },
+                { icon: "💪", t: "हुनर सिखाएं", d: "रोज़गार दें" },
+                { icon: "❤️", t: "स्वास्थ्य सेवा", d: "जागरूकता फैलाएं" },
+              ].map(v => (
+                <div key={v.t} className="rounded-2xl bg-white/10 border border-white/15 backdrop-blur p-4">
+                  <div className="text-3xl">{v.icon}</div>
+                  <div className="font-hi font-semibold mt-2">{v.t}</div>
+                  <div className="font-hi text-xs text-primary-foreground/75 mt-0.5">{v.d}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MOBILE PREVIEW + SOCIAL POSTS */}
       <section className="bg-gradient-to-b from-secondary/50 to-background border-y border-border">
         <div className="mx-auto max-w-7xl px-5 py-20 grid lg:grid-cols-[auto_1fr] gap-14 items-center">
